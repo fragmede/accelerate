@@ -21,7 +21,10 @@ from functools import update_wrapper
 from typing import Any, Mapping
 
 import torch
-from torch.distributed import ReduceOp
+try:
+    from torch.distributed import ReduceOp
+except ImportError:
+    continue
 
 from ..state import AcceleratorState
 from .dataclasses import DistributedType, TensorInformation
