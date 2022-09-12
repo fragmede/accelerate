@@ -24,7 +24,7 @@ import torch
 try:
     from torch.distributed import ReduceOp
 except ImportError:
-    continue
+    pass
 
 from ..state import AcceleratorState
 from .dataclasses import DistributedType, TensorInformation
